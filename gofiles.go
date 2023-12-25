@@ -1,14 +1,18 @@
 package gofiles
 
-import "github.com/CrutoiAlexandru/gofiles/internal/text"
+import (
+	"log"
 
-func ReadTextFile(file_path string) ([]string, error) {
+	"github.com/CrutoiAlexandru/gofiles/internal/text"
+)
+
+func ReadTextFile(file_path string) []string {
 	var file_lines []string
 
 	file_lines, err := text.Read(file_path)
 	if err != nil {
-		return file_lines, err
+		log.Fatal(err)
 	}
 
-	return file_lines, nil
+	return file_lines
 }
