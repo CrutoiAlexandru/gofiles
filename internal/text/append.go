@@ -5,12 +5,12 @@ import (
 	"os"
 )
 
-func Write(filePath string, content string) error {
+func Append(filePath string, content string) error {
 	var file *os.File
 	var writer *bufio.Writer
 	var err error
 
-	file, err = os.OpenFile(filePath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
+	file, err = os.OpenFile(filePath, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		return err
 	}

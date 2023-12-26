@@ -1,5 +1,0 @@
-package text
-
-func Replace() {
-
-}

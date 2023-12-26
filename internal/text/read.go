@@ -5,10 +5,10 @@ import (
 	"os"
 )
 
-func Read(file_path string) ([]string, error) {
-	var file_lines []string
+func Read(filePath string) ([]string, error) {
+	var fileLines []string
 
-	file, err := os.Open(file_path)
+	file, err := os.Open(filePath)
 	if err != nil {
 		return nil, err
 	}
@@ -16,12 +16,12 @@ func Read(file_path string) ([]string, error) {
 
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		file_lines = append(file_lines, scanner.Text())
+		fileLines = append(fileLines, scanner.Text())
 	}
 
 	if err := scanner.Err(); err != nil {
 		return nil, err
 	}
 
-	return file_lines, nil
+	return fileLines, nil
 }
