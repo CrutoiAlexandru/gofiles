@@ -1,4 +1,4 @@
-package main
+package gofiles
 
 import (
 	"log"
@@ -36,9 +36,4 @@ func RemoveTextFile(filePath string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-}
-
-func main() {
-	filePath := "tst"
-	RemoveTextFile(filePath)
 }
