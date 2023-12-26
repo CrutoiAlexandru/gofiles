@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/CrutoiAlexandru/gofiles/internal/text"
@@ -32,12 +31,14 @@ func AppendTextFile(filePath string, content string) {
 	}
 }
 
-// func RemoveTextFile()
+func RemoveTextFile(filePath string) {
+	err := text.Remove(filePath)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
 
 func main() {
 	filePath := "tst"
-	content := "\ncontent"
-	AppendTextFile(filePath, content)
-	fmt.Println(ReadTextFile(filePath))
-	// Remove(filePath)
+	RemoveTextFile(filePath)
 }
